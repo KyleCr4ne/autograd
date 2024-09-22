@@ -1,0 +1,26 @@
+Variable(data=2, grad=0, info=x1)
+Variable(data=3, grad=0, info=x2)
+Variable(data=5, grad=0, info=x3)
+Variable(data=1, grad=0, info=x4)
+std::cout for variable x1: Variable(data=2, grad=0)
+get data value of variable x1: 2
+get grad value of variable x1: 0
+
+result of sum x1 + x2 + x3 + x4: Variable(data=11, grad=0)
+result of productx1 * x2 * x3 * x4: Variable(data=30, grad=0)
+result of div x1 / x2: Variable(data=0.666667, grad=0)
+result of x1 ^ x2: Variable(data=8, grad=0)
+result of x1 - x2 + x3 Variable(data=4, grad=0)
+
+result of sigmoid(x1): Variable(data=0.880797, grad=0)
+result of exp(x2): Variable(data=20.0855, grad=0)
+
+After backward:
+Variable(data=2, grad=0.589836, info=x1)
+Variable(data=3, grad=0.393224, info=x2)
+Variable(data=5, grad=-0.196612, info=x3)
+Variable(data=1, grad=0, info=x4)
+Variable(data=0.731059, grad=1, info=sigmoid(act))
+
+Parents of result variable:
+Variable(data=1, grad=0.196612, info=x1*x2-x3)
