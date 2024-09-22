@@ -1,0 +1,5 @@
+Variable(data=2, grad=0.0775473, info=x1)
+Variable(data=1.25, grad=0.116321, info=x2)
+Variable(data=0.5, grad=0.310189, info=w1)
+Variable(data=0.75, grad=0.193868, info=w2)
+Variable(data=0.808067, grad=1, info=L)

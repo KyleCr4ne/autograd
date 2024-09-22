@@ -1,0 +1,8 @@
+Variable(data=1, grad=0, info=k)
+Variable(data=0.9375, grad=0, info=m)
+Variable(data=1.9375, grad=0, info=t)
+Variable(data=1.4375, grad=0, info=g)
+Variable(data=0.808067, grad=0, info=L)
+
+And for one line:
+Variable(data=0.808067, grad=0, info=)
