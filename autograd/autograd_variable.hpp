@@ -44,6 +44,7 @@ public:
     void get_info();
 
     void set_grad(T grad);
+    void set_data(T data);
     void add_info(const std::string &info);
 
     void backward();

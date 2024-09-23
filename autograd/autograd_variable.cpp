@@ -43,6 +43,11 @@ void Variable<T>::set_grad(T grad) {
 }
 
 template <typename T>
+void Variable<T>::set_data(T data) {
+    this->data_ = data;
+}
+
+template <typename T>
 void Variable<T>::add_info(const std::string &info) {
     additional_info_ = std::move(info);
 }
