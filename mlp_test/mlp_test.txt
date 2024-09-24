@@ -1,0 +1,14 @@
+Total trainable parameters: 171
+Epoch 1 Loss: 154.31
+Epoch 10 Loss: 12.3746
+Epoch 20 Loss: 6.51575
+Epoch 30 Loss: 4.72391
+Epoch 40 Loss: 3.96326
+Epoch 50 Loss: 3.56122
+Epoch 60 Loss: 3.29251
+Epoch 70 Loss: 3.09469
+Epoch 80 Loss: 2.95026
+Epoch 90 Loss: 2.74467
+Epoch 100 Loss: 2.59612
+
+Neural net output: -1.18032, Expected output: -0.748001
