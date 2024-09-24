@@ -112,9 +112,8 @@ optimizer<double> optim(nn, 0.0001); // learning rate to SGD = 0.0001;
 size_t epoches = N;
 for (size_t i = 0; i < epoches; ++i) {
     for (int j = 0; j < n_samples; ++j) {
-        std::vector<std::shared_ptr<Variable<double>>> output = nn(X[j]);
-        std::shared_ptr<Variable<double>> loss = Y[j] - output[0];
-        loss = loss->pow(std::make_shared<Variable<double>>(2.0));
+        std::vector<std::shared_ptr<Variable<double>>> output = nn(sample_input);
+        std::shared_ptr<Variable<double>> loss = loss_fn(output, sample_target);
 
         optim.zero_grad(); // reset the calculated gradients;
         loss->backward(); // backpropagation step;
