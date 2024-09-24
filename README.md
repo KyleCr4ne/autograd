@@ -84,3 +84,43 @@ $\frac{dL}{dw_2} = \frac{dL}{dm}\frac{dm}{dw_2} = [m=x_2w_2] = \frac{dL}{dm} x_2
 For this backward pass ```Variables``` have ```backward()``` method. If we use this method for L, we will find all partial derevatives step by step.
 
 Backward demonstrated at [autograd_backward](/autograd_backward) folder.
+
+### MLP
+
+To test autograd in work, the possibility of creating a simple fully connected neural network has been implemented.
+
+Neural net class ```NN``` has the function of adding a linear layer:
+
+```cpp
+NN nn; // define model;
+nn.add_linear_layer(in_size, out_size, true); 
+// add linear layer with input_size=in_size, output_size=out_size. True means using activation function;
+```
+
+A simple optimizer based on stochastic gradient descent is also implemented.
+
+Now let's look at an example of training loop:
+
+```cpp
+NN nn;
+nn.add_linear_layer(in_size, hidden_size, true);
+...
+nn.add_linear_layer(hidden_size, out_size, false);
+
+optimizer<double> optim(nn, 0.0001); // learning rate to SGD = 0.0001;
+
+size_t epoches = N;
+for (size_t i = 0; i < epoches; ++i) {
+    for (int j = 0; j < n_samples; ++j) {
+        std::vector<std::shared_ptr<Variable<double>>> output = nn(X[j]);
+        std::shared_ptr<Variable<double>> loss = Y[j] - output[0];
+        loss = loss->pow(std::make_shared<Variable<double>>(2.0));
+
+        optim.zero_grad(); // reset the calculated gradients;
+        loss->backward(); // backpropagation step;
+        optim.step(); // optimizer step [wi = wi - lr * dL / dwi]
+    }
+}
+```
+
+You can read the full example in [mlp_test folder](/mlp_test)
