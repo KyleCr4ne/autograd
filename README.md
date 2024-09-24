@@ -122,4 +122,4 @@ for (size_t i = 0; i < epoches; ++i) {
 }
 ```
 
-You can read the full example in [mlp_test folder](/mlp_test)
+You can read the full example in [mlp_test](/mlp_test) folder.
